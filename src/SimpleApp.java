@@ -17,7 +17,9 @@ public class SimpleApp {
     long numBs = logData.filter(new Function<String, Boolean>() {
       public Boolean call(String s) { return s.contains("b"); }
     }).count();
+    
+    long counts = logData.count();
 
-    System.out.println("Lines with a: " + numAs + ", lines with b: " + numBs);
+    System.out.println("Total Lines : "+counts+" Lines with a: " + numAs + ", lines with b: " + numBs);
   }
 }
