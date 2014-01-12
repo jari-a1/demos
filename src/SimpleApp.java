@@ -5,9 +5,9 @@ import org.apache.spark.api.java.function.Function;
 
 public class SimpleApp {
   public static void main(String[] args) {
-    String logFile = "$YOUR_SPARK_HOME/README.md"; // Should be some file on your system
+    String logFile = "/Users/jari/a1dev/idea/software/spark/README.md"; // Should be some file on your system
     JavaSparkContext sc = new JavaSparkContext("local", "Simple App",
-      "$YOUR_SPARK_HOME", new String[]{"target/simple-project-1.0.jar"});
+      "/Users/jari/a1dev/idea/software/spark", new String[]{"/Users/jari/a1dev/idea/idea1/target/simple-project-1.0.jar"});
     JavaRDD<String> logData = sc.textFile(logFile).cache();
 
     long numAs = logData.filter(new Function<String, Boolean>() {
